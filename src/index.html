@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>qq引用</title>
+</head>
+<body>
+  <script>
+      let docEle = document.documentElement;
+      function setRemUnit() {
+          //把根元素fontSize的值设置为了屏幕宽度的十分之一像素
+          docEle.style.fontSize = docEle.clientWidth / 20 + 'px';
+      }
+      setRemUnit();
+      window.addEventListener('resize', setRemUnit);
+  </script>
+  <div id="root"></div>
+</body>
+</html>
