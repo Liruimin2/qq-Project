@@ -23,6 +23,8 @@ function Serch() {
   const changeList=useCallback((event: ChangeEvent<HTMLInputElement>)=>{
     const result = qqIsRight(event.target.value);
     setValue(event.target.value);
+    console.log(result,'result');
+    
     if(result){
       setRespResult(true)
     }else{

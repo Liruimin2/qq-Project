@@ -1,7 +1,3 @@
 export function qqIsRight(value:string){
-
-var qqReg=/[1-9][0-9]{4,}/;
-
-return qqReg.test(value)  
-
+  return(/^[1-9]\d{4,9}$/.test(String(value))) ? true : false;
 }
