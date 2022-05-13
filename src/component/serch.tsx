@@ -10,7 +10,7 @@ function Serch() {
   const [rexpResult,setRespResult] = useState<boolean>(false);
   const debouncedValue = useDebounce<string>(value, 500);
   const [loading,setLoading] = useState<boolean>(true)
-  const list = async (value:string) => {
+  const fetchList = async (value:string) => {
     setLoading(true)
     try {
       const data:any = await apiGetList({ qq:value });
@@ -23,8 +23,6 @@ function Serch() {
   const changeList=useCallback((event: ChangeEvent<HTMLInputElement>)=>{
     const result = qqIsRight(event.target.value);
     setValue(event.target.value);
-    console.log(result,'result');
-    
     if(result){
       setRespResult(true)
     }else{
@@ -32,7 +30,7 @@ function Serch() {
     }
   },[event])
   useEffect(() => {
-    list(value);
+    fetchList(value);
   }, [debouncedValue])
   //测试用例
   return (
